@@ -75,3 +75,11 @@ Modals create a dynamic environment while using the web app.
 
 ### &emsp; Available for all devices
 The web app offers a responsive web design.
+
+# Functionality screenshots
+![Image](https://github.com/user-attachments/assets/9232a45b-c6c5-420f-a7ec-62bc24edb4e6)
+![Image](https://github.com/user-attachments/assets/0f1ef45f-0cbb-4008-9544-f4208ab3ecf7)
+![Image](https://github.com/user-attachments/assets/3c53f70f-b5f6-466a-a63f-6bd4cae5cd26)
+![Image](https://github.com/user-attachments/assets/0fb15ad5-e8bf-469c-8f99-c3fc86625d54)
+![Image](https://github.com/user-attachments/assets/33a63d1e-595b-4da6-bb27-6b84dc52801c)
+![Image](https://github.com/user-attachments/assets/f4e91343-ccad-4c77-8d71-5fc903b5a8f7)
