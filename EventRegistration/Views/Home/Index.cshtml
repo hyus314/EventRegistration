@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/home/index.css" asp-append-version="true" />
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div class="buttons-line">
+    @if (User.Identity!.IsAuthenticated)
+    {
+    @inject Microsoft.AspNetCore.Identity.UserManager<EventWorker> UserManager
+        {
+            var user = await UserManager.GetUserAsync(User);
+            if (user != null)
+            {
+                var isAdmin = await UserManager.IsInRoleAsync(user, "Admin");
+                if (isAdmin)
+                {
+                    <a asp-controller="Workers" asp-action="AllWorkers" class="workers-btn">View workers</a>
+                }
+            }
+        }
+    }
+    <a asp-controller="Events" asp-action="AllEvents" class="events-btn">View events</a>
+</div>

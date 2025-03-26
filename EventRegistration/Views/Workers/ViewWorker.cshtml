@@ -1,0 +1,132 @@
+﻿@model ViewWorkerDTO;
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+
+@{
+    var editWorkerNameToken = Antiforgery.GetAndStoreTokens(Context).RequestToken;
+    var editWorkerEmailToken = Antiforgery.GetAndStoreTokens(Context).RequestToken;
+    ViewData["Title"] = $"Worker - {Model.Username}";
+}
+
+<link rel="stylesheet" href="~/css/workers/detailsWorker.css" asp-append-version="true" />
+
+
+<input type="hidden" id="editWorkerNameAF" value="@editWorkerNameToken">
+<input type="hidden" id="editWorkerEmailAF" value="@editWorkerEmailToken">
+<p hidden id="id">@Model.Id</p>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <p>
+            @TempData["ErrorMessage"]
+        </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    TempData["ErrorMessage"] = null;
+}
+
+<div class="worker-div">
+    <div class="name-section">
+        <p class="display-5">Name: </p>
+        <h1>@Model.Username</h1>
+    </div>
+
+    <div class="email-section">
+        <p class="display-5">Email: </p>
+        <h1>@Model.Email</h1>
+    </div>
+    <div class="buttons-line">
+        <button class="name-btn" data-bs-toggle="modal" data-bs-target="#nameModal">Edit Name</button>
+        <button class="email-btn" data-bs-toggle="modal" data-bs-target="#emailModal">Edit Email</button>
+        <button class="delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+    </div>
+</div>
+
+@* Edit Worker Name Modal *@
+
+<div class="modal fade" id="nameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Name</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="current-data">
+                    <label class="display-6">Current name:</label>
+                    <p>@Model.Username</p>
+                </div>
+                <div class="edit-data">
+                    <label class="display-6">Edit name:</label>
+                    <input class="name-input">
+                </div>
+                <div class="message-line">
+                    <p></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Edit Worker Email Modal *@
+
+<div class="modal fade" id="emailModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit email</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="current-data">
+                    <label class="display-6">Current email:</label>
+                    <p>@Model.Email</p>
+                </div>
+                <div class="edit-data">
+                    <label class="display-6">Edit email:</label>
+                    <input class="name-input">
+                </div>
+                <div class="message-line">
+                    <p></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Delete Worker Modal *@
+
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete worker</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-action="DeleteWorker" asp-controller="Workers" method="post">
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <p>Type your password in order to delete @Model.Username</p>
+                    <input name="WorkerId" type="hidden" value="@Model.Id">
+                    <input name="AdminId" type="hidden" value="_">
+                    <input name="AdminPassword" type="password" required autocomplete="off" class="form-control" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn modal-delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/workers/workerActions.js" asp-append-version="true"></script>

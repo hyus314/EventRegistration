@@ -1,0 +1,43 @@
+﻿<link rel="stylesheet" href="~/css/events/allEvents.css" asp-append-version="true" />
+
+@{
+    ViewData["Title"] = "Calendar";
+}
+
+<div class="main-info">
+    <div class="options">
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                let calendarEl = document.getElementById('calendar');
+
+                let calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    locale: 'bg', // Set to Bulgarian
+                    selectable: true,
+                    editable: true,
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth'
+                    },
+                    buttonText: {
+                        today: 'Днес',
+                        month: 'Месец',
+                        week: '',
+                        day: ''
+                    },
+                    dateClick: function(info) {
+                        window.location.href = "/Events/Details?date=" + info.dateStr;
+                    }
+                });
+
+                calendar.render();
+            });
+
+        </script>
+
+        <div id='calendar'></div>
+    </div>
+</div>

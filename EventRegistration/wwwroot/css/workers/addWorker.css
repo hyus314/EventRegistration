@@ -1,0 +1,25 @@
+﻿body {
+}
+
+form label {
+    font-size: 24px;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+body > form > div.text-center > button {
+    padding-inline: 1em;
+    font-size: 30px !important;
+}
+
+div.alert {
+    padding-bottom: 0;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+

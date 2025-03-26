@@ -1,0 +1,43 @@
+﻿body {
+}
+@media (max-width: 600px) {
+    .calendar-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .calendar-container > .calendar-box {
+        width: 100%;
+    }
+    .fc-event-details {
+        font-size: 20px;
+    }
+    .calendar-buttons > button{
+        font-size: 20px;
+    }
+    #datePicker {
+        font-size: 30px;
+    }
+
+    .input-row {
+        font-size: 20px;
+    }
+
+    .modal-footer > button{
+        font-size: 20px !important;
+    }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+    .fc-event-details {
+        font-size: 20px;
+    }
+    .input-row {
+        font-size: 25px;
+    }
+    .modal-footer > button {
+        font-size: 26px !important;
+    }
+
+    .modal-dialog {
+        min-width: 80% !important;
+    }
+}

@@ -1,0 +1,28 @@
+﻿body {
+}
+
+.workers-list {
+    width: 50%;
+}
+
+.table-div {
+    margin: 0 auto;
+    width: 75%;
+}
+
+table {
+    font-size: 30px;
+}
+
+td {
+    max-width: 150px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-btn {
+    width: 80%;
+    padding: 0;
+    font-size: 30px;
+}

@@ -1,0 +1,137 @@
+﻿body {
+}
+
+.current-date-div {
+    text-align: center;
+    font-size: 3.5em;
+}
+.modal-dialog {
+    min-width: 80% !important;
+}
+.calendar-buttons {
+    padding-block: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+}
+
+    .calendar-buttons > button {
+        padding: 0.25em 1.25em;
+        font-size: 25px;
+        border-radius: 0.4em;
+        border: none;
+        background-color: #2e8be9;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(46, 139, 233, 0.5); /* Adds depth and glow */
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+    }
+
+        .calendar-buttons > button:hover {
+            background-color: #1b6fc2;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(46, 139, 233, 0.7); /* More intense glow */
+            transform: scale(1.05); 
+        }
+
+        .calendar-buttons > button:active {
+            transform: scale(0.98); 
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(46, 139, 233, 0.6);
+        }
+
+.date-picker-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+#datePicker {
+    padding: 0.5em 1em;
+    font-size: 25px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #2e8be9;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(46, 139, 233, 0.5); /* Adds depth and glow */
+}
+
+    /* Sexy hover effect */
+    #datePicker:hover {
+        background-color: #1b6fc2;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(46, 139, 233, 0.7); /* More intense glow */
+        transform: scale(1.05); /* Slight growth for extra impact */
+    }
+
+    /* Focus effect (when clicked) */
+    #datePicker:focus {
+        background-color: #0f5ba7;
+        box-shadow: 0 0 12px rgba(46, 139, 233, 0.9); /* Glowing border effect */
+    }
+
+    /* Remove default calendar icon */
+    #datePicker::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+    }
+
+/* Responsive adjustments */
+
+.calendar-container {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 5em;
+}
+
+
+
+.calendar-box {
+    width: 50%;
+}
+
+.fc-timegrid-slot {
+    height: 35px !important;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .fc-timegrid-slot:hover {
+        background-color: rgba(0, 123, 255, 0.2); /* Light blue background on hover */
+    }
+
+.fc-event-details {
+    color: white;
+    font-size: 24px;
+}
+
+.fc-event {
+    width: 60%;
+    background-color: #3f149f;
+    padding-inline: 1em;
+    border: 0;
+    cursor: pointer;
+}
+
+    .fc-event:hover {
+        background-color: #2e038e;
+    }
+
+
+#calendar1 > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td > div > div > div > div.fc-timegrid-cols > table > tbody > tr > td > div > div > div,
+#calendar2 > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td > div > div > div > div.fc-timegrid-cols > table > tbody > tr > td > div > div > div {
+    width: 100%;
+}
+
+#openAddModal, #openEditModal {
+    display: none;
+}
+
+.calendar-box > h3 {
+    text-align: center;
+    font-size: 40px;
+}

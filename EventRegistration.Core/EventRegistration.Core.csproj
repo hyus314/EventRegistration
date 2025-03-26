@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Mailjet.Api" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="9.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventRegistration.Common\EventRegistration.Common.csproj" />
+    <ProjectReference Include="..\EventRegistration.Data.Models\EventRegistration.Data.Models.csproj" />
+    <ProjectReference Include="..\EventRegistration.Data.ViewModels\EventRegistration.Data.ViewModels.csproj" />
+    <ProjectReference Include="..\EventRegistration.Data\EventRegistration.Data.csproj" />
+    <ProjectReference Include="..\EventRegistration.Security\EventRegistration.Security.csproj" />
+  </ItemGroup>
+</Project>

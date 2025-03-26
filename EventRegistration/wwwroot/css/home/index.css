@@ -1,0 +1,40 @@
+﻿body {
+}
+
+
+div.buttons-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4em;
+    padding-block: 1em;
+}
+
+    div.buttons-line > button,
+    div.buttons-line > a {
+        text-align: center;
+        align-content: center;
+        text-decoration: none;
+        color: white;
+        padding: 0.5em 1em;
+        font-size: 30px;
+        border: none;
+        transition: all 0.2s;
+        border-radius: 0.5em;
+    }
+
+        div.buttons-line > a.workers-btn {
+            background-color: #007FFF;
+        }
+
+            div.buttons-line > a.workers-btn:hover {
+                background-color: #006EEE;
+            }
+
+        div.buttons-line > a.events-btn {
+            background-color: #228B22;
+        }
+
+            div.buttons-line > a.events-btn:hover {
+                background-color: #117A11;
+            }

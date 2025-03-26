@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ViewWorkerDTO>
+
+@{
+    ViewData["Title"] = "Workers";
+}
+
+<link rel="stylesheet" href="~/css/workers/allWorkers.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/home/index.css" asp-append-version="true" />
+
+<div class="text-center">
+    @{
+        string word = Model.Count() > 1 ? "Workers" : "Worker";
+        <h1 class="display-4">@Model.Count() @word</h1>
+    }
+</div>
+
+    <div class="buttons-line">
+    <a asp-controller="Workers" asp-action="AddWorker" class="workers-btn">Add worker</a>
+</div>  
+<div class="table-div">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var worker in Model)
+            {
+                <tr>
+                    <td>@worker.Username</td>
+                    <td>@worker.Email</td>
+                    <td class="profile-cell text-center"><a asp-controller="Workers" asp-action="ViewWorker" asp-route-id="@worker.Id" class="btn btn-primary profile-btn">View</a></td>
+                </tr>
+            } 
+        </tbody>
+    </table>
+</div>

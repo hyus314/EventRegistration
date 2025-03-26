@@ -1,0 +1,18 @@
+﻿.input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 0.2em;
+}
+
+.input-row > input {
+    width: 60%;
+}
+
+button.add-event {
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s;
+}

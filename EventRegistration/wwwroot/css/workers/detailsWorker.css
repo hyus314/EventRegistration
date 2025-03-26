@@ -1,0 +1,103 @@
+﻿body {
+}
+
+
+.worker-div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+div.alert {
+    width: 80%;
+    margin: 3em auto;
+    padding-bottom: 0;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.buttons-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10em;
+}
+
+.name-section, .email-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.buttons-line > button {
+    transition: all 0.2s;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 1.5em
+}
+
+    div.buttons-line > button.name-btn {
+        background-color: #007FFF;
+    }
+
+        div.buttons-line > button.name-btn:hover {
+            background-color: #006EEE;
+        }
+
+    div.buttons-line > button.email-btn {
+        background-color: #228B22;
+    }
+
+        div.buttons-line > button.email-btn:hover {
+            background-color: #117A11;
+        }
+
+    div.buttons-line > button.delete-btn {
+        background-color: #ff4545;
+    }
+
+        div.buttons-line > button.delete-btn:hover {
+            background-color: #ee3434;
+        }
+
+
+        .modal-dialog {
+            min-width: 55% !important;
+        }
+
+.modal-body {
+    font-size: 39px;
+}
+
+.current-data, .edit-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-footer button{
+    font-size: 30px !important;
+    padding-inline: 1em;
+}
+
+.message-line {
+    text-align: center;
+}
+
+.message-line > p {
+    padding-top: 1em;
+}
+
+button.modal-delete {
+    background-color: #ff4545 !important;
+    color: white;
+}
+button.modal-delete:hover {
+    background-color: #ee3434 !important;
+    color: white;
+}
